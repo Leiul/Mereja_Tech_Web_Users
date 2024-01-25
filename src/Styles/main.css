@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Titillium Web", sans-serif;
+}
+
+:root {
+  --mainColor: #29335c;
+  --mainColorLight: #5767aa;
+  --secondaryColor: #db2b39;
+  --textColor: #eee;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  padding: 0 2rem;
+  background-color: var(--mainColor);
+  color: var(--textColor);
+}
+
+header h3 {
+  margin-right: auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: var(--textColor);
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+nav a:hover {
+  color: var(--secondaryColor);
+}
+header .login {
+  background-color: #52bd54;
+  padding: 5px;
+  padding-bottom: 10px;
+  
+  border-radius: 10px;
+  font-size: 1.8rem;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+header .nav-btn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--textColor);
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
+}
+
+header div,
+nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Add these styles to create a translucent overlay for the registration form */
+.registration-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* Style the container for the registration form */
+.registration-container {
+  background-color: #3f80e2;
+  padding: 20px;
+  width: 200px;
+  color: black;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.registration-container h2 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+/* Style the close button for the registration form */
+.close-registration-btn {
+  color: #141414;
+  font-size: 35px;
+  position: relative;
+  background-color: #3f80e2;
+  top: -187px;
+  right: -400px;
+
+  cursor: pointer;
+}
+
+.registration-container h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.registration-container div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.registration-container label {
+  font-weight: bold;
+  width: 120px;
+  margin-right: 10px;
+}
+
+
+.registration-container input[type="text"],
+.registration-container input[type="email"],
+.registration-container input[type="password"] {
+  flex-direction: column;
+  height: 50px;
+  font-size: 17px;
+  border-radius: 7px;
+}
+
+.registration-container button[type="submit"] {
+  padding: 10px 16px;
+  background-color: #52bd54;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.registration-container button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Update responsive styles for the header and nav */
+/* Update responsive styles for the header and nav */
+@media only screen and (max-width: 767px) {
+  header .nav-btn {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  header nav {
+    position: fixed;
+    top: -100vh;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: var(--mainColor);
+    transition: 0.1s;
+  }
+
+  header .responsive_nav {
+    transform: translateY(100vh);
+  }
+
+  nav .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  nav a {
+    font-size: 1.5rem;
+  }
+}
+
+.registration-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.registration-container {
+  width: 100%;
+  max-width: 400px;
+}
